@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../AuthProviders/AuthProvider";
+import { toast } from "react-toastify";
 
 
 const Navbar = () => {
@@ -18,7 +19,8 @@ const links = <>
 const handleLogout = () => {
   signout()
   .then(() => {
-    console.log("user log out")
+    // console.log("user log out")
+    toast.success(`User Logged Out`)
   })
   .catch(er => console.log(er))
 }

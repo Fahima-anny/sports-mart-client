@@ -3,6 +3,7 @@
 import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProviders/AuthProvider";
+import { toast } from "react-toastify";
 
 
 const Login = () => {
@@ -19,13 +20,15 @@ const handleSubmit = e => {
 
     login(email, pass)
     .then(res => {
-      console.log(res.user)
+      console.log(res.user.displayName)
       setProfile(res.user.photoURL)
+      toast.success(`Welcome ${res.user.displayName}`)
       form.reset() ;
 navigate("/")
     })
     .catch(er => {
       console.log(er)
+      toast.error("Wrong Email/Password")
     })
 }
 

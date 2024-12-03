@@ -14,7 +14,8 @@ import AllEquipment from './Components/AllEquipment';
 import AddEquipment from './Components/AddEquipment';
 import MyEquipment from './Components/MyEquipment';
 import AuthProvider from './AuthProviders/AuthProvider';
-
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const router = createBrowserRouter([
   {
@@ -53,6 +54,11 @@ const router = createBrowserRouter([
 createRoot(document.getElementById('root')).render(
   <StrictMode>
 <AuthProvider>
+<ToastContainer
+theme="dark"
+position="top-center"
+autoClose={1000}
+/>
 <RouterProvider router={router} />
 </AuthProvider>
   </StrictMode>,
