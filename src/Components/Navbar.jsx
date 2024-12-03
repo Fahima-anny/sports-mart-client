@@ -80,11 +80,13 @@ const handleLogout = () => {
 </label>
 {
   user && 
+  <div className="tooltip tooltip-bottom" data-tip={user?.displayName}>
   <div className="avatar">
   <div className="w-12 rounded-full">
     <img src={profile} />
   </div>
 </div>
+  </div>
 }
 {
   user ?

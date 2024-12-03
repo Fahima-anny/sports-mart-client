@@ -7,7 +7,7 @@ import { AuthContext } from "../AuthProviders/AuthProvider";
 
 const Login = () => {
 
-  const {login} = useContext(AuthContext) ;
+  const {login,setProfile} = useContext(AuthContext) ;
 const navigate = useNavigate() ;
 
 const handleSubmit = e => {
@@ -20,6 +20,7 @@ const handleSubmit = e => {
     login(email, pass)
     .then(res => {
       console.log(res.user)
+      setProfile(res.user.photoURL)
       form.reset() ;
 navigate("/")
     })
