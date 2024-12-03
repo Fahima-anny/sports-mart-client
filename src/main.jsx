@@ -13,6 +13,7 @@ import Register from './Components/Register';
 import AllEquipment from './Components/AllEquipment';
 import AddEquipment from './Components/AddEquipment';
 import MyEquipment from './Components/MyEquipment';
+import AuthProvider from './AuthProviders/AuthProvider';
 
 
 const router = createBrowserRouter([
@@ -51,6 +52,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-  <RouterProvider router={router} />
+<AuthProvider>
+<RouterProvider router={router} />
+</AuthProvider>
   </StrictMode>,
 )

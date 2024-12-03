@@ -5,7 +5,18 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   daisyui: {
-    themes: ["luxury", "bumblebee"],
+    themes: [
+      "luxury",
+       "bumblebee",
+       { 
+        bumblebee: {
+          // eslint-disable-next-line no-undef
+          ...require("daisyui/src/theming/themes")["bumblebee"],
+          primary: "black",
+          // secondary: "teal",
+        },
+      }
+      ],
   },
   theme: {
     extend: {},
