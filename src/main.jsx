@@ -16,6 +16,7 @@ import MyEquipment from './Components/MyEquipment';
 import AuthProvider from './AuthProviders/AuthProvider';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import PrivateRoute from './AuthProviders/PrivateRoute';
 
 const router = createBrowserRouter([
   {
@@ -37,11 +38,12 @@ const router = createBrowserRouter([
       },
       {
         path: "/allEquipment",
-        element: <AllEquipment></AllEquipment>
+        element: <PrivateRoute><AllEquipment></AllEquipment></PrivateRoute>,
+        loader: () => fetch("http://localhost:5000/equipments")
       },
       {
         path: "/addEquipment",
-        element: <AddEquipment></AddEquipment>
+        element: <PrivateRoute><AddEquipment></AddEquipment></PrivateRoute>
       },
       {
         path: "/myEquipment",

@@ -1,15 +1,17 @@
 /* eslint-disable react/no-unescaped-entities */
 
 import { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProviders/AuthProvider";
 import { toast } from "react-toastify";
 
 
 const Login = () => {
 
-  const {login} = useContext(AuthContext) ;
+  const {login, googleSignIn} = useContext(AuthContext) ;
 const navigate = useNavigate() ;
+const location = useLocation() ;
+console.log(location.state);
 
 const handleSubmit = e => {
     e.preventDefault() ;
@@ -24,12 +26,24 @@ const handleSubmit = e => {
       // setProfile(res.user.photoURL)
       toast.success(`Welcome ${res.user.displayName}`)
       form.reset() ; 
-navigate("/")
+navigate( location?.state ? location.state : "/")
     })
     .catch(er => {
       console.log(er)
       toast.error("Wrong Email/Password")
     })
+}
+
+const handleGoogleLogin = () => {
+  googleSignIn()
+  .then(res => {
+    console.log(res.user)
+    toast.success(`Welcome ${res.user.displayName}`)
+navigate("/")
+  })
+  .catch(er => {
+    console.log(er)
+  })
 }
 
     return (
@@ -55,7 +69,7 @@ navigate("/")
               </div>
               <div className="form-control mt-6">
                 <button className="btn bg-[#ffa400] hover:bg-[#d28900] text-black">Login</button>
-                <button className="btn btn-outline mt-5">Login With Google</button>
+                <button className="btn btn-outline mt-5" onClick={handleGoogleLogin}>Login With Google</button>
               </div>
 <p className="font-semibold text-gray-600 text-center mt-2">Don't have an account ? <Link to='/register' className="text-primary underline">Register</Link> Now.</p>
             </form>

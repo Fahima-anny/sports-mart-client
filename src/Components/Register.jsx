@@ -3,10 +3,11 @@ import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProviders/AuthProvider";
 import Swal from "sweetalert2";
+import { toast } from "react-toastify";
 
 const Register = () => {
 
-const {registerUser, updateUser, setProfile} = useContext(AuthContext) ;
+const {registerUser, updateUser, setProfile, googleSignIn} = useContext(AuthContext) ;
 const navigate = useNavigate() ;
 
     const handleSubmit = e => {
@@ -17,6 +18,16 @@ const navigate = useNavigate() ;
         const photo = form.photo.value ;
         const name = form.name.value ;
         console.log(email, pass,photo,name) ;
+
+        const regex = /^(?=.*[A-Z])(?=.*[a-z]).{6,}$/;
+
+        if (!regex.test(pass)) {
+          Swal.fire({
+            text: "Your password must contain 1 uppercase, 1 lowercase, at least 6 characters",
+            icon: "error"
+          });
+          return ;
+        } 
 
         registerUser(email,pass)
         .then(res=> {
@@ -37,6 +48,20 @@ const navigate = useNavigate() ;
         })
         .catch(er => console.log(er))
     }
+
+
+    
+const handleGoogleLogin = () => {
+  googleSignIn()
+  .then(res => {
+    console.log(res.user)
+    toast.success(`Welcome ${res.user.displayName}`)
+navigate("/")
+  })
+  .catch(er => {
+    console.log(er)
+  })
+}
 
     return (
         <div className="hero min-h-[80vh]">
@@ -73,7 +98,7 @@ const navigate = useNavigate() ;
               </div>
               <div className="form-control mt-3">
                 <button className="btn bg-[#ffa400] hover:bg-[#d28900] text-black">Register</button>
-                <button className="btn btn-outline mt-4">Login With Google</button>
+                <button className="btn btn-outline mt-4" onClick={handleGoogleLogin}>Login With Google</button>
               </div>
 <p className="font-semibold text-gray-600 text-center ">Already have an account ? <Link to='/login' className="text-primary underline">Login</Link> Now.</p>
             </form>
