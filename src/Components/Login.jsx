@@ -8,7 +8,7 @@ import { toast } from "react-toastify";
 
 const Login = () => {
 
-  const {login,setProfile} = useContext(AuthContext) ;
+  const {login} = useContext(AuthContext) ;
 const navigate = useNavigate() ;
 
 const handleSubmit = e => {
@@ -21,9 +21,9 @@ const handleSubmit = e => {
     login(email, pass)
     .then(res => {
       console.log(res.user.displayName)
-      setProfile(res.user.photoURL)
+      // setProfile(res.user.photoURL)
       toast.success(`Welcome ${res.user.displayName}`)
-      form.reset() ;
+      form.reset() ; 
 navigate("/")
     })
     .catch(er => {

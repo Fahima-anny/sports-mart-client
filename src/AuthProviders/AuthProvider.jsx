@@ -40,6 +40,7 @@ const signout = () => {
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, currentUser => {
             setUser(currentUser) ;
+            setProfile(currentUser?.photoURL)
             setLoading(false) ;
             console.log("current user is : ", currentUser) ;
         })
@@ -53,10 +54,9 @@ setUser,
 loading,
 updateUser,
 signout,
-setProfile,
 profile,
 login,
-
+setProfile
 }
 
     return (

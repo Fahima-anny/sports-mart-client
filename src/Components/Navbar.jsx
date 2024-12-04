@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../AuthProviders/AuthProvider";
 import { toast } from "react-toastify";
-
+import { Tooltip } from 'react-tooltip'
 
 const Navbar = () => {
 
@@ -50,7 +50,7 @@ const handleLogout = () => {
        {links}
       </ul>
     </div>
-    <a className="font-bold text-xl md:text-2xl pl-2 md:pl-0">Sports Mart</a>
+ <a className="font-bold text-lg md:text-2xl pl-2 lg:pl-0">Sports <br className="block sm:hidden" /> Mart</a> 
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1 font-medium">
@@ -58,14 +58,14 @@ const handleLogout = () => {
 
     </ul>
   </div>
-  <div className="navbar-end gap-2">
+  <div className="navbar-end items-center gap-2">
   <label className="swap swap-rotate">
   {/* this hidden checkbox controls the state */}
   <input type="checkbox" className="theme-controller" value="bumblebee" />
 
   {/* moon icon */}
   <svg
-    className="swap-off h-8 w-8 fill-current pt-2"
+    className="swap-off h-8 w-8 fill-current"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24">
     <path
@@ -82,13 +82,13 @@ const handleLogout = () => {
 </label>
 {
   user && 
-  <div className="tooltip tooltip-bottom" data-tip={user?.displayName}>
-  <div className="avatar">
-  <div className="w-12 rounded-full">
+
+  <div className="avatar" data-tooltip-id="my-tooltip" data-tooltip-content={user.displayName}>
+  <div className="w-10 md:w-12 rounded-full">
     <img src={profile} />
+    <Tooltip id="my-tooltip" />
   </div>
 </div>
-  </div>
 }
 {
   user ?

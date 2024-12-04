@@ -2,10 +2,11 @@
 import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProviders/AuthProvider";
+import Swal from "sweetalert2";
 
 const Register = () => {
 
-const {registerUser, updateUser,setProfile} = useContext(AuthContext) ;
+const {registerUser, updateUser, setProfile} = useContext(AuthContext) ;
 const navigate = useNavigate() ;
 
     const handleSubmit = e => {
@@ -20,11 +21,16 @@ const navigate = useNavigate() ;
         registerUser(email,pass)
         .then(res=> {
           console.log(res.user)
-          setProfile(photo)
           updateUser({displayName: name, photoURL: photo})
           .then(()=>{
-            console.log("name,photo updated")
+            console.log("name,photo updated",res.user.photoURL)
             form.reset() ;
+            setProfile(photo)
+            Swal.fire({
+              title: "Congrats!",
+              text: `${name} your account has been created`,
+              icon: "success"
+            });
             navigate("/")
           })
           .catch(er => console.log(er))
