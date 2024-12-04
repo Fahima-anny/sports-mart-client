@@ -9,18 +9,18 @@ const AllEquipment = () => {
 
     return (
         <div>
-          <div className="overflow-x-auto py-10">
-  <table className="table table-xs">
-    <thead className="text-primary pb-3 h-[60px]">
+          <div className="overflow-x-auto ">
+  <table className="table table-xs text-center">
+    <thead className="text-primary pb-3 h-[70px]">
       <tr>
         <th></th>
-        <th>Name</th>
-        <th>Job</th>
-        <th>company</th>
-        <th>location</th>
-        <th>Last Login</th>
-        <th>Last Login</th>
-        <th className="">Details</th>
+        <th>Item Name</th>
+        <th>Category</th>
+        <th>Stock Status</th>
+        <th>Ratings</th>
+        <th>Delivery Time</th>
+        <th>Price</th>
+        <th >Details</th>
       </tr>
     </thead>
     <tbody>

@@ -91,13 +91,13 @@ fetch("http://localhost:5000/equipments",{
        <div className="flex gap-10 flex-col md:flex-row">
        <div className="form-control w-full flex-row items-center gap-3">
           <label className="label md:w-1/4">
-            <span className="label-text">Rating:</span>
+            <span className="label-text">Ratings:</span>
           </label>
           <input name="rating" type="text"  className="input  w-full input-bordered" required />
         </div> 
         <div className="form-control w-full flex-row items-center gap-3">
           <label className="label md:w-1/4">
-            <span className="label-text">Delivery Time:</span>
+            <span className="label-text">Delivery Time (Days):</span>
           </label>
           <input name="delivery" type="text"  className="input  w-full input-bordered" required />
         </div> 
@@ -107,7 +107,7 @@ fetch("http://localhost:5000/equipments",{
        <div className="flex gap-10 flex-col md:flex-row">
        <div className="form-control w-full flex-row items-center gap-3">
           <label className="label md:w-1/4">
-            <span className="label-text">Stock Status:</span>
+            <span className="label-text">Availability (pcs):</span>
           </label>
           <input name="stock" type="text"  className="input  w-full input-bordered" required />
         </div> 
