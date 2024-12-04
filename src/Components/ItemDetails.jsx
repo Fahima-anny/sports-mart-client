@@ -1,3 +1,5 @@
+import { FiHeart } from "react-icons/fi";
+import { IoCartSharp } from "react-icons/io5";
 import { useLoaderData } from "react-router-dom";
 
 
@@ -55,8 +57,8 @@ const ItemDetails = () => {
                     <span className="col-span-2 text-primary">{description}</span>
                     </h3>
               <div className="pt-3 flex flex-col md:flex-row gap-3 ">
-                <button className="btn bg-[#ffa400] hover:bg-[#ffa400] text-black">Add to Cart</button>
-                <button className="btn bg-[#ffa400] hover:bg-[#ffa400] text-black ">Add to Wishlist</button>
+                <button className="btn lg:w-1/2 bg-[#ffa400] hover:bg-[#ffa400] text-black flex items-center gap-2">Add to Cart <IoCartSharp className="text-xl" /></button>
+                <button className="btn lg:w-1/2 bg-[#ffa400] hover:bg-[#ffa400] text-black flex items-center gap-2 ">Add to Wishlist <FiHeart  className="text-xl" /></button>
                 </div> 
                </div>
             </div>
