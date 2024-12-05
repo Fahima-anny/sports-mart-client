@@ -1,0 +1,73 @@
+[
+    {
+      "id": 1,
+      "name": "Ahmed Khan",
+      "rating": 5,
+      "review": "Fantastic product quality and timely delivery. Highly satisfied!",
+      "img": "https://example.com/ahmed_khan.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Sophia Ali",
+      "rating": 4,
+      "review": "Great service and product, but packaging needs improvement.",
+      "img": "https://example.com/sophia_ali.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Rahul Mehta",
+      "rating": 3,
+      "review": "Product was okay, but delivery took longer than expected.",
+      "img": "https://example.com/rahul_mehta.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Zara Sheikh",
+      "rating": 5,
+      "review": "Amazing experience! Exceeded expectations in every way possible.",
+      "img": "https://example.com/zara_sheikh.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Noah Hossain",
+      "rating": 4,
+      "review": "Good variety of options and fast response from support team.",
+      "img": "https://example.com/noah_hossain.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Liam Das",
+      "rating": 2,
+      "review": "Disappointed with the product quality. Customer support was slow.",
+      "img": "https://example.com/liam_das.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Hannah Kim",
+      "rating": 5,
+      "review": "Highly recommend! Great quality and exceptional customer service.",
+      "img": "https://example.com/hannah_kim.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Lucas Patel",
+      "rating": 3,
+      "review": "Average experience. Product quality and service could improve.",
+      "img": "https://example.com/lucas_patel.jpg"
+    },
+    {
+      "id": 9,
+      "name": "Aisha Khan",
+      "rating": 4,
+      "review": "Impressive quality and helpful support team. Will shop again.",
+      "img": "https://example.com/aisha_khan.jpg"
+    },
+    {
+      "id": 10,
+      "name": "Maya Iqbal",
+      "rating": 3,
+      "review": "Faced some issues but resolved quickly by customer service.",
+      "img": "https://example.com/maya_iqbal.jpg"
+    }
+  ]
+  

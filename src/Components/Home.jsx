@@ -1,6 +1,7 @@
 import Banner from "./sections/Banner";
 import ProductSection from "./sections/ProductSection";
 import SportsCategory from "./sections/SportsCategory";
+import TestimonialSection from "./sections/testimonialSection";
 
 
 const Home = () => {
@@ -11,6 +12,7 @@ const Home = () => {
            <ProductSection></ProductSection>
            </div>
             <SportsCategory></SportsCategory>
+            <TestimonialSection></TestimonialSection>
         </div>
     );
 };
