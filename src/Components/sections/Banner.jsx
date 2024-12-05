@@ -41,11 +41,11 @@ const Banner = () => {
                 {/* Swiper Slides with images */}
                 <SwiperSlide>
                 <div
-  className="hero min-h-screen rounded-lg"
+  className="hero h-full rounded-lg "
   style={{
     backgroundImage: "url(https://i.ibb.co.com/t4nNYJS/badminton-concept-with-racket-shuttlecock.jpg)",
   }}>
-  <div className="hero-overlay bg-black bg-opacity-40"></div>
+  <div className="hero-overlay bg-black bg-opacity-40 rounded-lg"></div>
   <div className="hero-content text-white text-center">
     <div className="max-w-md">
     <h1 className="mb-5 text-5xl font-bold">Your Sports Partner</h1>
@@ -59,11 +59,11 @@ const Banner = () => {
                 </SwiperSlide>
                 <SwiperSlide>
                     <div
-  className="hero min-h-screen rounded-lg"
+  className="hero  h-full rounded-lg"
   style={{
     backgroundImage: "url(https://i.ibb.co.com/nz19Htx/sports-tools.jpg)",
   }}>
-  <div className="hero-overlay bg-black bg-opacity-60"></div>
+  <div className="hero-overlay bg-black bg-opacity-60 rounded-lg"></div>
   <div className="hero-content text-white text-center">
     <div className="max-w-md">
       <h1 className="mb-5 text-5xl font-bold">Gear Up Today!</h1>
@@ -77,11 +77,11 @@ const Banner = () => {
                 </SwiperSlide>
                 <SwiperSlide>
                 <div
-  className="hero min-h-screen rounded-lg"
+  className="hero  h-full rounded-lg"
   style={{
     backgroundImage: "url(https://i.ibb.co.com/B6qSzXf/cricket-match-with-player.jpg)",
   }}>
-  <div className="hero-overlay bg-black bg-opacity-40"></div>
+  <div className="hero-overlay bg-black bg-opacity-40 rounded-lg"></div>
   <div className="hero-content text-white text-center">
     <div className="max-w-md">
       <h1 className="mb-5 text-5xl font-bold">Train Like a Pro</h1>
@@ -95,11 +95,11 @@ const Banner = () => {
                 </SwiperSlide>
                 <SwiperSlide>
                 <div
-  className="hero min-h-screen rounded-lg"
+  className="hero  h-full rounded-lg"
   style={{
     backgroundImage: "url(https://i.ibb.co.com/CVbgJDP/american-football-american-football-player-professional-sport-stadium.jpg)",
   }}>
-  <div className="hero-overlay bg-black bg-opacity-40"></div>
+  <div className="hero-overlay bg-black bg-opacity-40 rounded-lg"></div>
   <div className="hero-content text-white text-center">
     <div className="max-w-md">
       <h1 className="mb-5 text-5xl font-bold">Play Hard, Win Big</h1>

@@ -7,7 +7,8 @@ const allData = useLoaderData() ;
 
     return (
         <div>
-            my equipment : {allData.length}
+            my equipment : 
+            {allData.length}
         </div>
     );
 };

@@ -48,13 +48,14 @@ const router = createBrowserRouter([
         element: <PrivateRoute><AddEquipment></AddEquipment></PrivateRoute>
       },
       {
-        path: "/myEquipment",
-        element: <MyEquipment></MyEquipment>
+        path: "/myEquipment/:email",
+        element: <PrivateRoute><MyEquipment></MyEquipment></PrivateRoute>,
+        loader: ({params}) => fetch(`http://localhost:5000/equipments/user/${params.email}`)
       },
       {
         path: "/productDetails/:id",
         element: <PrivateRoute><ItemDetails></ItemDetails></PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/equipments/${params.id}`)
+        loader: ({params}) => fetch(`http://localhost:5000/equipments/id/${params.id}`)
       },
     ]
   },

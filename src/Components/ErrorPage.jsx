@@ -2,9 +2,9 @@
 
 const ErrorPage = () => {
     return (
-        <div>
+        <div className='flex justify-center items-center min-h-screen '>
             An error has occurred
-        </div>
+</div>
     );
 };
 

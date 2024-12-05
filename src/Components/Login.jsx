@@ -39,7 +39,7 @@ const handleGoogleLogin = () => {
   .then(res => {
     console.log(res.user)
     toast.success(`Welcome ${res.user.displayName}`)
-navigate("/")
+    navigate( location?.state ? location.state : "/")
   })
   .catch(er => {
     console.log(er)

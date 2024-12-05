@@ -54,13 +54,13 @@ fetch("http://localhost:5000/equipments",{
           <label className="label md:w-1/4">
             <span className="label-text">Name:</span>
           </label>
-          <input name="name" type="text" value={user.displayName} readOnly className="input  w-full input-bordered" required />
+          <input name="name" type="text" value={user.displayName} readOnly className="input  w-full input-bordered text-primary" required />
         </div> 
         <div className="form-control w-full flex-row items-center gap-3">
           <label className="label md:w-1/4">
             <span className="label-text">Email:</span>
           </label>
-          <input name="email" type="email" value={user.email} readOnly className="input  w-full input-bordered" required />
+          <input name="email" type="email" value={user.email} readOnly className="input  w-full input-bordered text-primary" required />
         </div> 
        </div>
 
@@ -70,13 +70,13 @@ fetch("http://localhost:5000/equipments",{
           <label className="label md:w-1/4">
             <span className="label-text">Item Name:</span>
           </label>
-          <input name="item" type="text" className="input  w-full input-bordered" required />
+          <input name="item" type="text" className="input  text-primary w-full input-bordered" required />
         </div>
         <div className="form-control w-full flex-row items-center gap-3">
           <label className="label md:w-1/4">
             <span className="label-text">Category:</span>
           </label>
-          <select name="category" className="select select-bordered w-full " required>
+          <select name="category" className="select select-bordered w-full  text-primary" required>
   <option disabled value='' selected>Select Category</option>
   <option value="Football">Football</option>
   <option value="Cricket">Cricket</option>
@@ -93,13 +93,13 @@ fetch("http://localhost:5000/equipments",{
           <label className="label md:w-1/4">
             <span className="label-text">Ratings:</span>
           </label>
-          <input name="rating" type="text"  className="input  w-full input-bordered" required />
+          <input name="rating" type="text"  className="input  text-primary w-full input-bordered" required />
         </div> 
         <div className="form-control w-full flex-row items-center gap-3">
           <label className="label md:w-1/4">
             <span className="label-text">Delivery Time (Days):</span>
           </label>
-          <input name="delivery" type="text"  className="input  w-full input-bordered" required />
+          <input name="delivery" type="text"  className="input  text-primary w-full input-bordered" required />
         </div> 
        </div>
       
@@ -109,13 +109,13 @@ fetch("http://localhost:5000/equipments",{
           <label className="label md:w-1/4">
             <span className="label-text">Availability (pcs):</span>
           </label>
-          <input name="stock" type="text"  className="input  w-full input-bordered" required />
+          <input name="stock" type="text"  className="input  text-primary w-full input-bordered" required />
         </div> 
         <div className="form-control w-full flex-row items-center gap-3">
           <label className="label md:w-1/4">
             <span className="label-text">Price-$:</span>
           </label>
-          <input name="price" type="text"  className="input  w-full input-bordered" required />
+          <input name="price" type="text"  className="input  text-primary w-full input-bordered" required />
         </div> 
        </div>
      
@@ -126,13 +126,13 @@ fetch("http://localhost:5000/equipments",{
           <label className="label md:w-1/4">
             <span className="label-text">Photo-URL:</span>
           </label>
-          <input name="photo" type="text"  className="input  w-full input-bordered" required />
+          <input name="photo" type="text"  className="input  text-primary w-full input-bordered" required />
         </div> 
         <div className="form-control w-full flex-row items-center gap-3">
           <label className="label md:w-1/4">
             <span className="label-text">Customization:</span>
           </label>
-          <input name="customization" type="text"  className="input  w-full input-bordered" required />
+          <input name="customization" type="text"  className="input  text-primary w-full input-bordered" required />
         </div> 
        </div>
       
@@ -142,7 +142,7 @@ fetch("http://localhost:5000/equipments",{
           <label className="label w-[9vw]">
             <span className="label-text">Description:</span>
           </label>
-          <textarea name="description" className="textarea textarea-bordered w-full"></textarea>
+          <textarea name="description" className="textarea text-primary textarea-bordered w-full"></textarea>
         </div> 
 </div>
         <div className="form-control mt-6">

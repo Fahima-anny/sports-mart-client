@@ -13,7 +13,7 @@ const links = <>
      <li><NavLink to='/'>Home</NavLink></li>
      <li><NavLink to='/allEquipment'>All Sports Equipment</NavLink></li>
      <li><NavLink to='/addEquipment'>Add Equipment</NavLink></li>
-     <li><NavLink to='/myEquipment'>My Equipment List</NavLink></li>
+     <li><NavLink to={`/myEquipment/${user?.email}`}>My Equipment List</NavLink></li>
 </>
 
 const handleLogout = () => {
