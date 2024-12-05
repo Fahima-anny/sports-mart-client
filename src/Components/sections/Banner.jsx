@@ -52,7 +52,7 @@ const Banner = () => {
       <p className="mb-5">
       Discover everything from fitness essentials to professional equipment, making us your trusted partner in every sports journey.
       </p>
-      <button className="btn bg-[#ffa400] hover:bg-[#ffa400] border-0 text-black">Get Started</button>
+      <a href="#productSection"><button  className="btn bg-[#ffa400] hover:bg-[#ffa400] border-0 text-black">Get Started</button></a>
     </div>
   </div>
 </div>
@@ -70,7 +70,7 @@ const Banner = () => {
       <p className="mb-5">
       Explore premium sports gear crafted for durability, comfort, and performance to help you excel in every game.
       </p>
-      <button className="btn bg-[#ffa400] hover:bg-[#ffa400] border-0 text-black">Get Started</button>
+      <a href="#productSection"><button  className="btn bg-[#ffa400] hover:bg-[#ffa400] border-0 text-black">Get Started</button></a>
     </div>
   </div>
 </div>
@@ -88,7 +88,7 @@ const Banner = () => {
       <p className="mb-5">
       Find high-quality equipment designed to support your training, boost endurance, and take your athletic skills to new heights.
       </p>
-      <button className="btn bg-[#ffa400] hover:bg-[#ffa400] border-0 text-black">Get Started</button>
+      <a href="#productSection"><button  className="btn bg-[#ffa400] hover:bg-[#ffa400] border-0 text-black">Get Started</button></a>
     </div>
   </div>
 </div>
@@ -106,7 +106,7 @@ const Banner = () => {
       <p className="mb-5">
       Get durable sports gear tailored for peak performance and ultimate victory, no matter your sport or skill level.
       </p>
-      <button className="btn bg-[#ffa400] hover:bg-[#ffa400] border-0 text-black">Get Started</button>
+      <a href="#productSection"><button  className="btn bg-[#ffa400] hover:bg-[#ffa400] border-0 text-black">Get Started</button></a>
     </div>
   </div>
 </div>

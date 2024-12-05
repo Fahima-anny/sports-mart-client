@@ -11,6 +11,8 @@ const AuthProvider = ({children}) => {
 const [user, setUser] = useState(null) ;
 const [loading, setLoading] = useState(true) ;
 const [profile, setProfile] = useState(null) ;
+// const [allMyData,setAllMyData] = useState(null)
+
 
     const auth = getAuth(app);
     const googleProvider = new GoogleAuthProvider();
@@ -50,6 +52,8 @@ const signout = () => {
             setProfile(currentUser?.photoURL)
             setLoading(false) ;
             console.log("current user is : ", currentUser) ;
+            // fetch(`http://localhost:5000/equipments/user/${currentUser.email}`)
+            // setAllMyData(loadedData) ;
         })
         return () => unSubscribe() ;
     } ,[auth])
@@ -64,7 +68,9 @@ signout,
 profile,
 login,
 setProfile,
-googleSignIn
+googleSignIn,
+// allMyData,
+// setAllMyData
 }
 
     return (

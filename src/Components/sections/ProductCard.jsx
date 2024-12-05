@@ -11,10 +11,10 @@ const ProductCard = ({data}) => {
 const {_id,item, category,price,photo,rating,delivery} = data
 
     return (
-        <div className="card bg-base-200 rounded-lg">
+        <div className="card shadow-xl rounded-lg">
         <figure className="">
           <img
-          className="h-[400px] w-full object-cover object-center"
+          className="h-[300px] w-full object-cover object-center"
             src={photo}
             alt="Shoes" />
         </figure>

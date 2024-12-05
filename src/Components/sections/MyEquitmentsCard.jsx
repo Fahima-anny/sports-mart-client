@@ -3,6 +3,7 @@
 import { FaEdit } from "react-icons/fa";
 import { MdOutlineDelete } from "react-icons/md";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 
 const MyEquitmentsCard = ({data,allData,setAllData}) => {
@@ -10,28 +11,46 @@ const MyEquitmentsCard = ({data,allData,setAllData}) => {
     const {_id,item, category,price,photo,rating,delivery} = data
 
 const handleDelete = () => {
-    console.log("delete : ",_id) ;
-    fetch(`http://localhost:5000/equipments/id/${_id}`, {
-        method: "DELETE"
-    })
-    .then(res => res.json())
-    .then(data => {
-        console.log(data)
-        if(data.deletedCount > 0){
-            alert("deleted") ;
-            console.log(allData)
-            const remaining = allData.filter(d => d._id !== _id) ;
-            console.log(remaining)
-            setAllData(remaining) ;
+    // console.log("delete : ",_id) ;
+
+    Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!"
+      }).then((result) => {
+        if (result.isConfirmed) {
+
+            fetch(`http://localhost:5000/equipments/id/${_id}`, {
+                method: "DELETE"
+            })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if(data.deletedCount > 0){
+                    Swal.fire({
+                        title: "Deleted!",
+                        text: "Your file has been deleted.",
+                        icon: "success"
+                      });
+                    const remaining = allData.filter(d => d._id !== _id) ;
+                    setAllData(remaining) ;
+                }
+            })
+
         }
-    })
+      });
+
 }
 
     return (
-        <div className="card bg-base-200 rounded-lg">
+        <div className="card shadow-xl rounded-lg">
         <figure className="">
           <img
-          className="h-[400px] w-full object-cover object-center"
+          className="h-[300px] w-full object-cover object-center"
             src={photo}
             alt="Shoes" />
         </figure>

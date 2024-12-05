@@ -14,7 +14,7 @@ const ItemDetails = () => {
         <div className="md:grid md:grid-cols-2 gap-10  md:justify-between ">
             <div className="">
                 <img src={photo}
-                    className="w-full lg:w-[450px] h-full lg:h-[500px] object-cover object-center rounded-2xl "
+                    className="w-full h-full lg:h-[500px] object-cover object-center rounded-2xl "
                     alt="" />
             </div>
 

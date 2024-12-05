@@ -7,7 +7,9 @@ const Home = () => {
     return (
         <div>
             <Banner></Banner>
-            <ProductSection></ProductSection>
+           <div id="productSection">
+           <ProductSection></ProductSection>
+           </div>
             <SportsCategory></SportsCategory>
         </div>
     );

@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 
 import { useContext } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProviders/AuthProvider";
 import { toast } from "react-toastify";
 
@@ -10,23 +10,24 @@ const Login = () => {
 
   const {login, googleSignIn} = useContext(AuthContext) ;
 const navigate = useNavigate() ;
-const location = useLocation() ;
-console.log(location.state);
+// const location = useLocation() ;
+// console.log(location.state);
 
 const handleSubmit = e => {
     e.preventDefault() ;
     const form = e.target ;
     const email = form.email.value ;
     const pass = form.pass.value ;
-    console.log(email, pass) ;
+    // console.log(email, pass) ;
 
     login(email, pass)
     .then(res => {
-      console.log(res.user.displayName)
+      // console.log(res.user.displayName)
       // setProfile(res.user.photoURL)
       toast.success(`Welcome ${res.user.displayName}`)
       form.reset() ; 
-navigate( location?.state ? location.state : "/")
+      navigate("/")
+// navigate( location?.state ? location.state : "/")
     })
     .catch(er => {
       console.log(er)
@@ -37,9 +38,18 @@ navigate( location?.state ? location.state : "/")
 const handleGoogleLogin = () => {
   googleSignIn()
   .then(res => {
-    console.log(res.user)
+    // console.log(res.user)
     toast.success(`Welcome ${res.user.displayName}`)
-    navigate( location?.state ? location.state : "/")
+    // console.log(user.email)
+    // const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    // if(emailRegex.test(location.state)){
+    // navigate( location?.state ? location.state/user.email : "/")
+    // console.log("path e mail ase")
+    // }
+    // console.log("path e mail nai")
+    // navigate( location?.state ? location.state : "/")
+    navigate("/")
+
   })
   .catch(er => {
     console.log(er)

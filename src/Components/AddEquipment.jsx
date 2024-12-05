@@ -44,6 +44,11 @@ fetch("http://localhost:5000/equipments",{
 
     return (
         <div>
+
+<h1 className="text-center text-3xl md:text-4xl font-bold text-primary">Add Equipment</h1>
+
+<p className="mx-auto max-w-2xl text-center py-7 text-gray-600">Admins can seamlessly add new products with detailed information, expanding the inventory and enhancing the shopping experience for users</p>
+
            <div className=" min-h-screen">
     <div className=" bg-base-100 w-full ">
       <form onSubmit={handleAdd} className="card-body gap-6 px-0">
