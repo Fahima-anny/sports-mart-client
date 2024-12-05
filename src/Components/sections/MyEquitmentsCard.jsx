@@ -1,14 +1,13 @@
 /* eslint-disable react/prop-types */
 
-import { IoCartSharp } from "react-icons/io5";
-import { MdKeyboardDoubleArrowRight } from "react-icons/md";
+import { FaEdit } from "react-icons/fa";
+import { MdOutlineDelete } from "react-icons/md";
 import { Link } from "react-router-dom";
 
 
+const MyEquitmentsCard = ({data}) => {
 
-const ProductCard = ({data}) => {
-
-const {_id,item, category,price,photo,rating,delivery} = data
+    const {_id,item, category,price,photo,rating,delivery} = data
 
     return (
         <div className="card bg-base-200 rounded-lg">
@@ -30,14 +29,14 @@ const {_id,item, category,price,photo,rating,delivery} = data
           </div>
           <div className="grid md:grid-cols-2 gap-3 mt-3 justify-center">
      <Link
-      to={`/productDetails/${_id}`}
-       className="flex gap-1 items-center btn bg-[#ffa400] hover:bg-[#cc8500] text-black">
-        View Details <MdKeyboardDoubleArrowRight className="text-2xl" /></Link>
-        <button className="btn bg-[#ffa400] hover:bg-[#ce8600] text-black flex items-center gap-2">Add to Cart <IoCartSharp className="text-xl" /></button>
+      to={`/updateProduct/${_id}`}
+       className="flex gap-2 items-center btn bg-[#ffa400] hover:bg-[#cc8500] text-black">
+        Update <FaEdit className="text-xl" /></Link>
+        <button className="btn bg-[#ffa400] hover:bg-[#ce8600] text-black flex items-center gap-1">Delete <MdOutlineDelete  className="text-2xl" /></button>
           </div>
         </div>
       </div>
     );
 };
 
-export default ProductCard;
+export default MyEquitmentsCard;
