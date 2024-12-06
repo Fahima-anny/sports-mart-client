@@ -7,7 +7,7 @@ const MyEquipment = () => {
 
 const loadedData = useLoaderData() ;
 const [allData,setAllData] = useState(loadedData)
-console.log(allData)
+// console.log(allData)
     return (
         <div>
           {/* <h1 className="text-center text-3xl  pb-10 my-5 font-bold text-primary">Equipments Added by : {allData[0].name}</h1> */}

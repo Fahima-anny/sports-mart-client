@@ -5,7 +5,7 @@ import ProductCard from "./ProductCard";
 const ProductSection = () => {
 
 const allData = useLoaderData() ;
-console.log(allData) ;
+// console.log(allData) ;
     return (
         <div className="pt-20 pb-16">
           

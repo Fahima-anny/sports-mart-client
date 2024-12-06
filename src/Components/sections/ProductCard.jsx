@@ -18,9 +18,9 @@ const {_id,item, category,price,photo,rating,delivery} = data
             src={photo}
             alt="Shoes" />
         </figure>
-        <div className="card-body p-5 font-medium">
+        <div className="card-body p-2 lg:p-5 font-medium">
           <h2 className="card-title text-primary">{item}</h2>
-<div className="grid grid-cols-2 gap-2 ">
+<div className="grid flex-grow grid-cols-2 gap-2">
 <p>Category: {category}</p>
 <p className="">Delivery Time: {delivery}</p>
 </div>
@@ -28,7 +28,7 @@ const {_id,item, category,price,photo,rating,delivery} = data
           <p>Price: ${price}</p>
           <p>Rating: {rating}</p>
           </div>
-          <div className="grid md:grid-cols-2 gap-3 mt-3 justify-center">
+          <div className="grid md:grid-cols-2 gap-3 mt-3 md:justify-center">
      <Link
       to={`/productDetails/${_id}`}
        className="flex gap-1 items-center btn bg-[#ffa400] hover:bg-[#cc8500] text-black">

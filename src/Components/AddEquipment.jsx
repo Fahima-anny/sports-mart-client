@@ -24,10 +24,10 @@ const handleAdd = e => {
     const photo = form.photo.value ;
     // const rating = rating.value ;
     const delivery = form.delivery.value ;
-    console.log(name,email,item, category,price,customization,description,stock,photo,"rating: ",rating,delivery) ;
+    // console.log(name,email,item, category,price,customization,description,stock,photo,"rating: ",rating,delivery) ;
     const newEquipment = {name,email,item, category,price,customization,description,stock,photo,rating,delivery}
 
-fetch("http://localhost:5000/equipments",{
+fetch("https://sports-mart-server-gamma.vercel.app/equipments",{
     method: "POST",
     headers: {
         "Content-Type": "application/json",
@@ -36,7 +36,7 @@ fetch("http://localhost:5000/equipments",{
 })
 .then(res =>res.json())
 .then(data => {
-    console.log(data)
+    // console.log(data)
     if(data.insertedId){
         toast.success("New Item Added")
         form.reset() ;

@@ -13,7 +13,7 @@ const data = useLoaderData() ;
 const navigate = useNavigate() ;
 const {_id,name,email,item, category,price,customization,description,stock,photo,rating,delivery} = data
 const [ratings, setRatings] = useState(rating);
-console.log(data)
+// console.log(data)
 
 const handleUpdateProduct = e => {
     e.preventDefault() ;
@@ -29,11 +29,11 @@ const handleUpdateProduct = e => {
     const photo = form.photo.value ;
     // const rating = form.rating.value ;
     const delivery = form.delivery.value ;
-    console.log(name,email,item, category,price,customization,description,stock,photo,rating,delivery) ;
+    // console.log(name,email,item, category,price,customization,description,stock,photo,rating,delivery) ;
 
     const updatedEquipment = {name,email,item, category,price,customization,description,stock,photo,rating:ratings,delivery}
 
-fetch(`http://localhost:5000/equipments/id/${_id}`,{
+fetch(`https://sports-mart-server-gamma.vercel.app/equipments/id/${_id}`,{
     method: "PATCH",
     headers: {
         "Content-Type": "application/json",
@@ -42,7 +42,7 @@ fetch(`http://localhost:5000/equipments/id/${_id}`,{
 })
 .then(res =>res.json())
 .then(data => {
-    console.log(data)
+    // console.log(data)
     if(data.matchedCount > 0){
         toast.success("Item updated Successfully")
         form.reset() ;
@@ -115,7 +115,7 @@ navigate("/")
    emptySymbol={<FaRegStar className="icon" />}
    fullSymbol={<FaStar className="icon" />}
    onChange={(value) => {setRatings(value)
-    console.log("Updated Ratings:", value);
+    // console.log("Updated Ratings:", value);
    }}
    />
 

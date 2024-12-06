@@ -7,12 +7,12 @@ import { useState } from "react";
 const AllEquipment = () => {
 
     const allItem = useLoaderData() ;
-    console.log("non sorted",allItem)
+    // console.log("non sorted",allItem)
 
 const [allData, setAllData] = useState([...allItem])
 
 const handleSort = (e) => {
-  console.log(e.target.value)
+  // console.log(e.target.value)
 
 if(e.target.value === "ascending" ){
   const desSorted = [...allItem].sort((a,b)=> a.price - b.price) ;

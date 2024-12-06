@@ -17,7 +17,7 @@ const navigate = useNavigate() ;
         const pass = form.pass.value ;
         const photo = form.photo.value ;
         const name = form.name.value ;
-        console.log(email, pass,photo,name) ;
+        // console.log(email, pass,photo,name) ;
 
         const regex = /^(?=.*[A-Z])(?=.*[a-z]).{6,}$/;
 
@@ -31,10 +31,10 @@ const navigate = useNavigate() ;
 
         registerUser(email,pass)
         .then(res=> {
-          console.log(res.user)
-          updateUser({displayName: name, photoURL: photo})
+          // console.log(res.user)
+         res.user && updateUser({displayName: name, photoURL: photo})
           .then(()=>{
-            console.log("name,photo updated",res.user.photoURL)
+            // console.log("name,photo updated",res.user.photoURL)
             form.reset() ;
             setProfile(photo)
             Swal.fire({
@@ -54,7 +54,7 @@ const navigate = useNavigate() ;
 const handleGoogleLogin = () => {
   googleSignIn()
   .then(res => {
-    console.log(res.user)
+    // console.log(res.user)
     toast.success(`Welcome ${res.user.displayName}`)
 navigate("/")
   })

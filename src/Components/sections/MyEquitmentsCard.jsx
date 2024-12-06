@@ -24,12 +24,12 @@ const handleDelete = () => {
       }).then((result) => {
         if (result.isConfirmed) {
 
-            fetch(`http://localhost:5000/equipments/id/${_id}`, {
+            fetch(`https://sports-mart-server-gamma.vercel.app/equipments/id/${_id}`, {
                 method: "DELETE"
             })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+                // console.log(data)
                 if(data.deletedCount > 0){
                     Swal.fire({
                         title: "Deleted!",
@@ -64,7 +64,7 @@ const handleDelete = () => {
           <p>Price: ${price}</p>
           <p>Rating: {rating}</p>
           </div>
-          <div className="grid md:grid-cols-2 gap-3 mt-3 justify-center">
+          <div className="grid grid-cols-2 gap-3 mt-3 justify-center">
      <Link
       to={`/updateProduct/${_id}`}
        className="flex gap-2 items-center btn bg-[#ffa400] hover:bg-[#cc8500] text-black">
