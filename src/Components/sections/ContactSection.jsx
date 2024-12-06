@@ -1,3 +1,5 @@
+import Lottie from "lottie-react";
+import Animation from "../../../public/contact - 1733475013407.json";
 
 
 const ContactSection = () => {
@@ -5,11 +7,16 @@ const ContactSection = () => {
         <div>
 
 
-<div className="grid md:grid-cols-2 gap-10 items-center justify-between">
+<div className="grid md:grid-cols-2 gap-10 py-10 items-center justify-between">
     <div className="">
-       <img 
+
+    <Lottie
+            className=""
+            animationData={Animation} loop={true} />
+
+       {/* <img 
        className="w-full"
-       src='https://i.ibb.co.com/zN6J82W/49643.png' alt="" /> 
+       src='https://i.ibb.co.com/zN6J82W/49643.png' alt="" />  */}
     </div>
     <div>
     <h1 className=" text-3xl font-bold text-primary">Write to us</h1>
