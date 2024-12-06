@@ -1,4 +1,7 @@
 
+import { useState } from "react";
+import { FaRegStar, FaStar } from "react-icons/fa";
+import Rating from "react-rating";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 // import { toast } from "react-toastify";
@@ -9,6 +12,7 @@ const UpdateProduct = () => {
 const data = useLoaderData() ;
 const navigate = useNavigate() ;
 const {_id,name,email,item, category,price,customization,description,stock,photo,rating,delivery} = data
+const [ratings, setRatings] = useState(rating);
 console.log(data)
 
 const handleUpdateProduct = e => {
@@ -23,11 +27,11 @@ const handleUpdateProduct = e => {
     const description = form.description.value ;
     const stock = form.stock.value ;
     const photo = form.photo.value ;
-    const rating = form.rating.value ;
+    // const rating = form.rating.value ;
     const delivery = form.delivery.value ;
     console.log(name,email,item, category,price,customization,description,stock,photo,rating,delivery) ;
 
-    const updatedEquipment = {name,email,item, category,price,customization,description,stock,photo,rating,delivery}
+    const updatedEquipment = {name,email,item, category,price,customization,description,stock,photo,rating:ratings,delivery}
 
 fetch(`http://localhost:5000/equipments/id/${_id}`,{
     method: "PATCH",
@@ -103,7 +107,19 @@ navigate("/")
           <label className="label md:w-1/4">
             <span className="label-text">Ratings:</span>
           </label>
-          <input name="rating" type="text" defaultValue={rating} className="input  text-primary w-full input-bordered" required />
+
+          <Rating
+          name="rating"
+   className="text-yellow-500 text-xl"
+   initialRating={rating}
+   emptySymbol={<FaRegStar className="icon" />}
+   fullSymbol={<FaStar className="icon" />}
+   onChange={(value) => {setRatings(value)
+    console.log("Updated Ratings:", value);
+   }}
+   />
+
+          {/* <input name="rating" type="text" defaultValue={rating} className="input  text-primary w-full input-bordered" required /> */}
         </div> 
         <div className="form-control w-full flex-row items-center gap-3">
           <label className="label md:w-1/4">

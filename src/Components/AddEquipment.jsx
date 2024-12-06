@@ -1,11 +1,14 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../AuthProviders/AuthProvider";
 import { toast } from "react-toastify";
+import Rating from "react-rating";
+import { FaRegStar, FaStar } from "react-icons/fa";
 
 
 const AddEquipment = () => {
 
     const {user} = useContext(AuthContext) ;
+    const [rating, setRating] = useState(0);
 
 const handleAdd = e => {
     e.preventDefault() ;
@@ -19,9 +22,9 @@ const handleAdd = e => {
     const description = form.description.value ;
     const stock = form.stock.value ;
     const photo = form.photo.value ;
-    const rating = form.rating.value ;
+    // const rating = rating.value ;
     const delivery = form.delivery.value ;
-    console.log(name,email,item, category,price,customization,description,stock,photo,rating,delivery) ;
+    console.log(name,email,item, category,price,customization,description,stock,photo,"rating: ",rating,delivery) ;
     const newEquipment = {name,email,item, category,price,customization,description,stock,photo,rating,delivery}
 
 fetch("http://localhost:5000/equipments",{
@@ -98,7 +101,17 @@ fetch("http://localhost:5000/equipments",{
           <label className="label md:w-1/4">
             <span className="label-text">Ratings:</span>
           </label>
-          <input name="rating" type="text"  className="input  text-primary w-full input-bordered" required />
+
+          <Rating
+          name="rating"
+   className="text-yellow-500 text-xl"
+   initialRating={0}
+   emptySymbol={<FaRegStar className="icon" />}
+   fullSymbol={<FaStar className="icon" />}
+   onChange={(value) => setRating(value)}
+   />
+
+          {/* <input name="rating" type="text"  className="input  text-primary w-full input-bordered" required /> */}
         </div> 
         <div className="form-control w-full flex-row items-center gap-3">
           <label className="label md:w-1/4">

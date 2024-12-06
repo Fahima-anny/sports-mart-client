@@ -1,5 +1,7 @@
+import { FaRegStar, FaStar } from "react-icons/fa";
 import { FiHeart } from "react-icons/fi";
 import { IoCartSharp } from "react-icons/io5";
+import Rating from "react-rating";
 import { useLoaderData } from "react-router-dom";
 
 
@@ -32,9 +34,17 @@ const ItemDetails = () => {
                     <span className="">Availability : </span> 
                     <span className="col-span-2 text-primary">{stock} pcs</span>
                     </h3>
-                <h3 className="lg:grid grid-cols-3 gap-2 text-xl font-medium">
+                <h3 className="lg:grid grid-cols-3 gap-2 text-xl font-medium ">
                     <span className="">Ratings : </span> 
-                    <span className="col-span-2 text-primary">{rating}</span>
+                    <span className="col-span-2 text-primary">
+                    <Rating
+   className="text-yellow-500 text-xl"
+   initialRating={rating}
+   emptySymbol={<FaRegStar className="icon" />}
+   fullSymbol={<FaStar className="icon" />}
+   readonly
+   />
+                    </span>
                     </h3>
                 <h3 className="lg:grid grid-cols-3 gap-2 text-xl font-medium">
                     <span className="">Delivery Time : </span> 
