@@ -1,6 +1,6 @@
 ## 1. Project Name : Sports Mart
 
-## 2. Live Link : 
+## 2. Live Link : https://sports-mart-b10a10.web.app/
 
 ## 3. 5 Key Features of The Project :
  -  This is a fully dynamic website build with react, react-router, tailwind CSS, daisyUI etc.
