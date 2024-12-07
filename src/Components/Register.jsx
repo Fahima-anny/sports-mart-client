@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProviders/AuthProvider";
 import Swal from "sweetalert2";
 import { toast } from "react-toastify";
+import { Helmet } from "react-helmet";
 
 const Register = () => {
 
@@ -65,6 +66,11 @@ navigate("/")
 
     return (
         <div className="hero min-h-[80vh]">
+           <Helmet
+           >
+        <title>Sports Mart | Register</title>
+        <link rel="canonical" href="https://www.tacobell.com/" />
+      </Helmet>
         <div className="hero-content flex-col gap-8 p-0 w-full">
             <h1 className="text-primary text-center font-semibold text-3xl pt-3">Register for free</h1>
           <div className="card bg-base-200 w-full max-w-lg rounded-md">

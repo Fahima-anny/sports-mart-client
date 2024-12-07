@@ -1,5 +1,6 @@
 
 import { useState } from "react";
+import { Helmet } from "react-helmet";
 import { FaRegStar, FaStar } from "react-icons/fa";
 import Rating from "react-rating";
 import { useLoaderData, useNavigate } from "react-router-dom";
@@ -33,7 +34,7 @@ const handleUpdateProduct = e => {
 
     const updatedEquipment = {name,email,item, category,price,customization,description,stock,photo,rating:ratings,delivery}
 
-fetch(`https://sports-mart-server-gamma.vercel.app/equipments/id/${_id}`,{
+fetch(`http://localhost:5000/equipments/id/${_id}`,{
     method: "PATCH",
     headers: {
         "Content-Type": "application/json",
@@ -53,12 +54,16 @@ navigate("/")
 }
 
     return (
-        <div>
+        <div className="max-w-7xl mx-auto pt-7">
+           <Helmet>
+        <title>Sports Mart | Update Equipment</title>
+        <link rel="canonical" href="https://www.tacobell.com/" />
+      </Helmet>
 <h1 className="text-center text-3xl md:text-4xl font-bold text-primary">Update Equipment</h1>
 
 <p className="mx-auto max-w-2xl text-center py-7 pb-12 text-gray-600">Admins can efficiently update product details, ensuring accurate and up-to-date information for better management and user experience.</p>
 
-<div className=" min-h-screen">
+<div className="">
     <div className=" bg-base-100 w-full ">
       <form onSubmit={handleUpdateProduct} className="card-body gap-6 px-0">
       

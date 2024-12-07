@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { FaRegStar, FaStar } from "react-icons/fa";
 import { FiHeart } from "react-icons/fi";
 import { IoCartSharp } from "react-icons/io5";
@@ -9,11 +10,15 @@ const ItemDetails = () => {
 
     const itemData = useLoaderData();
 
-    // eslint-disable-next-line no-unused-vars
-    const { _id, name, email, item, category, price, customization, description, stock, photo, rating, delivery } = itemData;
+  
+    const { name,  item, category, price, customization, description, stock, photo, rating, delivery } = itemData;
 
     return (
-        <div className="md:grid md:grid-cols-2 gap-10  md:justify-between ">
+        <div className="md:grid md:grid-cols-2 gap-10  md:justify-between max-w-7xl mx-auto pt-10">
+             <Helmet>
+        <title>Sports Mart | {item}</title>
+        <link rel="canonical" href="https://www.tacobell.com/" />
+      </Helmet>
             <div className="">
                 <img src={photo}
                     className="w-full h-full lg:h-[500px] object-cover object-center rounded-2xl "

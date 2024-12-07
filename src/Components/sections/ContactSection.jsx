@@ -1,8 +1,17 @@
 import Lottie from "lottie-react";
-import Animation from "../../../public/contact - 1733475013407.json";
+import Animation from "./contact-us.json";
+import { useEffect, useRef } from "react";
 
 
 const ContactSection = () => {
+
+const ref = useRef() ;
+
+  useEffect(()=> {
+ref.current.play()
+  },[])
+
+
     return (
         <div>
 
@@ -11,6 +20,7 @@ const ContactSection = () => {
     <div className="">
 
     <Lottie
+    lottieRef={ref}
             className=""
             animationData={Animation} loop={true} />
 

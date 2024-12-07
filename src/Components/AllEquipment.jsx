@@ -1,6 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import TableRow from "./sections/TableRow";
 import { useState } from "react";
+import { Helmet } from "react-helmet";
 
 
 
@@ -27,8 +28,11 @@ else{
 }
 
     return (
-        <div>
-
+        <div className="max-w-7xl mx-auto py-7">
+ <Helmet>
+        <title>Sports Mart | All Equipments</title>
+        <link rel="canonical" href="https://www.tacobell.com/" />
+      </Helmet>
 <div className="flex flex-col md:flex-row justify-between gap-3 py-5">
   <h3 className="font-semibold text-xl">Sort Items By Price :</h3>
   {/* <button onClick={handleSort} className="btn btn-outline flex gap-2 items-center"> <IoMdArrowDropdown className="text-2xl" />

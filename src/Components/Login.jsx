@@ -4,6 +4,7 @@ import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProviders/AuthProvider";
 import { toast } from "react-toastify";
+import { Helmet } from "react-helmet";
 
 
 const Login = () => {
@@ -58,6 +59,10 @@ const handleGoogleLogin = () => {
 
     return (
         <div className="hero min-h-[75vh]">
+                <Helmet>
+        <title>Sports Mart | Login</title>
+        <link rel="canonical" href="https://www.tacobell.com/" />
+      </Helmet>
               <div className="hero-content flex-col gap-8 p-0 w-full">
               <h1 className="text-primary text-center font-semibold text-3xl pt-4">Login Now</h1>
           <div className="card bg-base-200 w-full max-w-md rounded-md">

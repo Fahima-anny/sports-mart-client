@@ -1,7 +1,8 @@
 /* eslint-disable react/prop-types */
 
-import { FaEdit } from "react-icons/fa";
+import { FaEdit, FaRegStar, FaStar } from "react-icons/fa";
 import { MdOutlineDelete } from "react-icons/md";
+import Rating from "react-rating";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
@@ -24,7 +25,7 @@ const handleDelete = () => {
       }).then((result) => {
         if (result.isConfirmed) {
 
-            fetch(`https://sports-mart-server-gamma.vercel.app/equipments/id/${_id}`, {
+            fetch(`http://localhost:5000/equipments/id/${_id}`, {
                 method: "DELETE"
             })
             .then(res => res.json())
@@ -60,17 +61,24 @@ const handleDelete = () => {
 <p>Category: {category}</p>
 <p className="">Delivery Time: {delivery}</p>
 </div>
-<div className="grid grid-cols-2 gap-2">
+<div className="grid grid-cols-2 gap-2 flex-grow">
           <p>Price: ${price}</p>
-          <p>Rating: {rating}</p>
+          <p className="flex items-center justify-center gap-1">Rating: 
+               <Rating
+   className="text-yellow-500 text-xl"
+   initialRating={rating}
+   emptySymbol={<FaRegStar className="icon" />}
+   fullSymbol={<FaStar className="icon" />}
+   readonly
+   /></p>
           </div>
           <div className="grid grid-cols-2 gap-3 mt-3 justify-center">
      <Link
       to={`/updateProduct/${_id}`}
-       className="flex gap-2 items-center btn bg-[#ffa400] hover:bg-[#cc8500] text-black">
+       className="flex flex-nowrap h-auto gap-2 items-center btn bg-[#ffa400] hover:bg-[#cc8500] text-black">
         Update <FaEdit className="text-xl" /></Link>
         <button 
-        className="btn bg-[#ffa400] hover:bg-[#ce8600] text-black flex items-center gap-1"
+        className="btn flex-nowrap h-auto bg-[#ffa400] hover:bg-[#ce8600] text-black flex items-center gap-1"
         onClick={handleDelete}
         >Delete
          <MdOutlineDelete  className="text-2xl" />

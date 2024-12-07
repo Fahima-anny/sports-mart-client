@@ -18,7 +18,8 @@ const {_id,item, category,price,stock,rating,delivery} = prod ;
         <td>{delivery}</td>
         <td>${price}</td>
         <td className="hover:underline flex justify-center">
-            <Link to={`/productDetails/${_id}`} className="flex gap-1 hover:underline items-center pt-2">View Details <MdKeyboardDoubleArrowRight className="text-2xl" /></Link>
+           <Link to={`/productDetails/${_id}`}><button to={`/productDetails/${_id}`} className="flex btn btn-outline gap-1 items-center ">View Details <MdKeyboardDoubleArrowRight className="text-2xl" /></button>
+           </Link> 
         </td>
       </tr>
     );

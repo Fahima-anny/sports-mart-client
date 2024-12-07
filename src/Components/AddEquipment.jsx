@@ -3,6 +3,7 @@ import { AuthContext } from "../AuthProviders/AuthProvider";
 import { toast } from "react-toastify";
 import Rating from "react-rating";
 import { FaRegStar, FaStar } from "react-icons/fa";
+import { Helmet } from "react-helmet-async";
 
 
 const AddEquipment = () => {
@@ -27,7 +28,7 @@ const handleAdd = e => {
     // console.log(name,email,item, category,price,customization,description,stock,photo,"rating: ",rating,delivery) ;
     const newEquipment = {name,email,item, category,price,customization,description,stock,photo,rating,delivery}
 
-fetch("https://sports-mart-server-gamma.vercel.app/equipments",{
+fetch("http://localhost:5000/equipments",{
     method: "POST",
     headers: {
         "Content-Type": "application/json",
@@ -46,13 +47,16 @@ fetch("https://sports-mart-server-gamma.vercel.app/equipments",{
 }
 
     return (
-        <div>
-
+        <div className="max-w-7xl mx-auto pt-7">
+ <Helmet>
+        <title>Sports Mart | Add Equipment</title>
+        <link rel="canonical" href="https://www.tacobell.com/" />
+      </Helmet>
 <h1 className="text-center text-3xl md:text-4xl font-bold text-primary">Add Equipment</h1>
 
 <p className="mx-auto max-w-2xl text-center py-7 text-gray-600">Admins can seamlessly add new products with detailed information, expanding the inventory and enhancing the shopping experience for users</p>
 
-           <div className=" min-h-screen">
+           <div className="">
     <div className=" bg-base-100 w-full ">
       <form onSubmit={handleAdd} className="card-body gap-6 px-0">
       
@@ -84,12 +88,15 @@ fetch("https://sports-mart-server-gamma.vercel.app/equipments",{
           <label className="label md:w-1/4">
             <span className="label-text">Category:</span>
           </label>
-          <select name="category" className="select select-bordered w-full  text-primary" required>
-  <option disabled value='' selected>Select Category</option>
+          <select name="category" defaultValue='' className="select select-bordered w-full  text-primary" required>
+  <option disabled value='' >Select Category</option>
   <option value="Football">Football</option>
   <option value="Cricket">Cricket</option>
   <option value="Badminton">Badminton</option>
   <option value="Tennis">Tennis</option>
+  <option value="Cycling">Cycling</option>
+  <option value="Basketball">Basketball</option>
+  <option value="Gym & Fitness">Gym & Fitness</option>
   <option value="Others">Others</option>
 </select>
         </div>

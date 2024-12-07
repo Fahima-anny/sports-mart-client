@@ -61,11 +61,11 @@ const handleLogout = () => {
   <div className="navbar-end items-center gap-2">
   <label className="swap swap-rotate">
   {/* this hidden checkbox controls the state */}
-  <input type="checkbox" className="theme-controller" value="bumblebee" />
+  <input type="checkbox" className="theme-controller" value="luxury" />
 
   {/* moon icon */}
   <svg
-    className="swap-off h-8 w-8 fill-current"
+    className="swap-on h-8 w-8 fill-current"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24">
     <path
@@ -73,7 +73,7 @@ const handleLogout = () => {
   </svg>
   {/* sun icon */}
   <svg
-    className="swap-on  h-9 w-9 fill-current"
+    className="swap-off  h-9 w-9 fill-current"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24">
     <path
@@ -92,7 +92,7 @@ const handleLogout = () => {
 }
 {
   user ?
-  <button className="btn" onClick={handleLogout}>Log Out</button>
+  <button className="btn btn-primary text-secondary" onClick={handleLogout}>Log Out</button>
    : 
   <>
       <Link to='/login' className="btn">Login</Link>
