@@ -52,7 +52,7 @@ const signout = () => {
             setProfile(currentUser?.photoURL)
             setLoading(false) ;
             // console.log("current user is : ", currentUser) ;
-            // fetch(`http://localhost:5000/equipments/user/${currentUser.email}`)
+            // fetch(`https://sports-mart-server-gamma.vercel.app/equipments/user/${currentUser.email}`)
             // setAllMyData(loadedData) ;
         })
         return () => unSubscribe() ;

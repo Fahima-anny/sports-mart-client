@@ -1,15 +1,19 @@
 
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProviders/AuthProvider";
 import Swal from "sweetalert2";
 import { toast } from "react-toastify";
 import { Helmet } from "react-helmet";
+import { MdOutlineRemoveRedEye } from "react-icons/md";
+import { IoEyeOffOutline } from "react-icons/io5";
+import { Fade } from "react-awesome-reveal";
 
 const Register = () => {
 
 const {registerUser, updateUser, setProfile, googleSignIn} = useContext(AuthContext) ;
 const navigate = useNavigate() ;
+const [showPassword,setShowPassword] = useState(false) ;
 
     const handleSubmit = e => {
         e.preventDefault() ;
@@ -64,7 +68,17 @@ navigate("/")
   })
 }
 
+const handlePasswordToggle = () => {
+setShowPassword(!showPassword)
+
+}
+
     return (
+      <Fade
+      direction="right"
+      duration={1600}
+      cascade
+      >
         <div className="hero min-h-[80vh]">
            <Helmet
            >
@@ -83,21 +97,34 @@ navigate("/")
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Photo URL</span>
-                </label>
-                <input name='photo' type="text" placeholder="photo" className="input input-bordered" required />
-              </div>
-              <div className="form-control">
-                <label className="label">
                   <span className="label-text">Email</span>
                 </label>
                 <input name='email' type="email" placeholder="email" className="input input-bordered" required />
               </div>
               <div className="form-control">
                 <label className="label">
+                  <span className="label-text">Photo URL</span>
+                </label>
+                <input name='photo' type="text" placeholder="photo" className="input input-bordered" required />
+              </div>
+              <div className="form-control">
+                <label className="label">
                   <span className="label-text">Password</span>
                 </label>
-                <input name="pass" type="password" placeholder="password" className="input input-bordered" required />
+                <div className="relative">
+                <input name="pass" type={showPassword ? "text" :  "password" } placeholder="password" className="input input-bordered w-full" required />
+               {
+                showPassword ? 
+                <IoEyeOffOutline
+                onClick={handlePasswordToggle}
+                className="absolute right-4 cursor-pointer  top-4 text-xl text-gray-400"
+                /> 
+                :  <MdOutlineRemoveRedEye 
+                onClick={handlePasswordToggle}
+                className="absolute right-4 cursor-pointer  top-4 text-xl text-gray-400"
+                /> 
+               }
+                </div>
                 {/* <label className="label">
                   <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                 </label> */}
@@ -111,6 +138,7 @@ navigate("/")
           </div>
         </div>
       </div>
+      </Fade>
     );
 };
 

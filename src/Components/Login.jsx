@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProviders/AuthProvider";
 import { toast } from "react-toastify";
 import { Helmet } from "react-helmet";
+import { Fade } from "react-awesome-reveal";
 
 
 const Login = () => {
@@ -58,6 +59,11 @@ const handleGoogleLogin = () => {
 }
 
     return (
+      <Fade
+      direction="left"
+      duration={1600}
+      cascade
+      >
         <div className="hero min-h-[75vh]">
                 <Helmet>
         <title>Sports Mart | Login</title>
@@ -91,6 +97,7 @@ const handleGoogleLogin = () => {
           </div>
         </div>
       </div>
+      </Fade>
     );
 };
 

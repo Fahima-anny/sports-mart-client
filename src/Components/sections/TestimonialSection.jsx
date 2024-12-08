@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import ClientsCard from "./ClientsCard";
 import Marquee from "react-fast-marquee";
@@ -7,11 +7,14 @@ const TestimonialSection = () => {
 
 const [clientData, setClientData] = useState([]) ;
 
-fetch("review.json")
+useEffect(()=>{
+    fetch("review.json")
 .then(res => res.json())
 .then(data =>{
     setClientData(data)
 })
+}, [])
+
 // console.log(clientData)
 
     return (

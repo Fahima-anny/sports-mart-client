@@ -1,5 +1,6 @@
 
 import { useState } from "react";
+import { Fade } from "react-awesome-reveal";
 import { Helmet } from "react-helmet";
 import { FaRegStar, FaStar } from "react-icons/fa";
 import Rating from "react-rating";
@@ -34,7 +35,7 @@ const handleUpdateProduct = e => {
 
     const updatedEquipment = {name,email,item, category,price,customization,description,stock,photo,rating:ratings,delivery}
 
-fetch(`http://localhost:5000/equipments/id/${_id}`,{
+fetch(`https://sports-mart-server-gamma.vercel.app/equipments/id/${_id}`,{
     method: "PATCH",
     headers: {
         "Content-Type": "application/json",
@@ -59,6 +60,13 @@ navigate("/")
         <title>Sports Mart | Update Equipment</title>
         <link rel="canonical" href="https://www.tacobell.com/" />
       </Helmet>
+      <Fade
+      direction="up"
+      duration={1000}
+      cascade
+      damping={0.2}
+      triggerOnce
+      >
 <h1 className="text-center text-3xl md:text-4xl font-bold text-primary">Update Equipment</h1>
 
 <p className="mx-auto max-w-2xl text-center py-7 pb-12 text-gray-600">Admins can efficiently update product details, ensuring accurate and up-to-date information for better management and user experience.</p>
@@ -182,7 +190,7 @@ navigate("/")
       </form>
     </div>
   </div>
-
+</Fade>
         </div>
     );
 };

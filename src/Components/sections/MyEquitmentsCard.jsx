@@ -25,7 +25,7 @@ const handleDelete = () => {
       }).then((result) => {
         if (result.isConfirmed) {
 
-            fetch(`http://localhost:5000/equipments/id/${_id}`, {
+            fetch(`https://sports-mart-server-gamma.vercel.app/equipments/id/${_id}`, {
                 method: "DELETE"
             })
             .then(res => res.json())

@@ -4,6 +4,7 @@ import { toast } from "react-toastify";
 import Rating from "react-rating";
 import { FaRegStar, FaStar } from "react-icons/fa";
 import { Helmet } from "react-helmet-async";
+import { Fade } from "react-awesome-reveal";
 
 
 const AddEquipment = () => {
@@ -28,7 +29,7 @@ const handleAdd = e => {
     // console.log(name,email,item, category,price,customization,description,stock,photo,"rating: ",rating,delivery) ;
     const newEquipment = {name,email,item, category,price,customization,description,stock,photo,rating,delivery}
 
-fetch("http://localhost:5000/equipments",{
+fetch("https://sports-mart-server-gamma.vercel.app/equipments",{
     method: "POST",
     headers: {
         "Content-Type": "application/json",
@@ -52,6 +53,13 @@ fetch("http://localhost:5000/equipments",{
         <title>Sports Mart | Add Equipment</title>
         <link rel="canonical" href="https://www.tacobell.com/" />
       </Helmet>
+      <Fade
+      direction="up"
+      duration={2000}
+      cascade
+      damping={0.2}
+      triggerOnce
+      >
 <h1 className="text-center text-3xl md:text-4xl font-bold text-primary">Add Equipment</h1>
 
 <p className="mx-auto max-w-2xl text-center py-7 text-gray-600">Admins can seamlessly add new products with detailed information, expanding the inventory and enhancing the shopping experience for users</p>
@@ -176,6 +184,7 @@ fetch("http://localhost:5000/equipments",{
       </form>
     </div>
   </div>
+  </Fade>
 </div>
     );
 };

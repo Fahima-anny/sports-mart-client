@@ -1,3 +1,4 @@
+import { Fade } from "react-awesome-reveal";
 import { Helmet } from "react-helmet-async";
 import { FaRegStar, FaStar } from "react-icons/fa";
 import { FiHeart } from "react-icons/fi";
@@ -19,14 +20,26 @@ const ItemDetails = () => {
         <title>Sports Mart | {item}</title>
         <link rel="canonical" href="https://www.tacobell.com/" />
       </Helmet>
+      <Fade
+      direction="up"
+      duration={2000}
+      triggerOnce
+      >
             <div className="">
                 <img src={photo}
                     className="w-full h-full lg:h-[500px] object-cover object-center rounded-2xl "
                     alt="" />
             </div>
-
+</Fade>
             <div className="flex flex-col justify-center">
                <div className="flex flex-col justify-center gap-2 ">
+               <Fade
+      direction="up"
+      duration={1000}
+      cascade
+      damping={0.1}
+      triggerOnce
+      >
                <h3 className="lg:grid grid-cols-3 gap-2 text-xl font-medium">
                     <span className="col-span-1">Item Name : </span> 
                     <span className="col-span-2 text-primary">{item}</span>
@@ -75,6 +88,7 @@ const ItemDetails = () => {
                 <button className="btn lg:w-1/2 bg-[#ffa400] hover:bg-[#ffa400] text-black flex items-center gap-2">Add to Cart <IoCartSharp className="text-xl" /></button>
                 <button className="btn lg:w-1/2 bg-[#ffa400] hover:bg-[#ffa400] text-black flex items-center gap-2 ">Add to Wishlist <FiHeart  className="text-xl" /></button>
                 </div> 
+                </Fade>
                </div>
             </div>
         </div>

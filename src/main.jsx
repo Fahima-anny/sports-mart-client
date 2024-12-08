@@ -31,7 +31,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: ()=> fetch(`http://localhost:5000/equipments/limit`)
+        loader: ()=> fetch(`https://sports-mart-server-gamma.vercel.app/equipments/limit`)
       },
       {
         path: "/login",
@@ -44,7 +44,7 @@ const router = createBrowserRouter([
       {
         path: "/allEquipment",
         element: <AllEquipment></AllEquipment>,
-        loader: () => fetch("http://localhost:5000/equipments")
+        loader: () => fetch("https://sports-mart-server-gamma.vercel.app/equipments")
       },
       {
         path: "/addEquipment",
@@ -53,17 +53,17 @@ const router = createBrowserRouter([
       {
         path: "/myEquipment/:email",
         element: <PrivateRoute><MyEquipment></MyEquipment></PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/equipments/user/${params.email}`)
+        loader: ({params}) => fetch(`https://sports-mart-server-gamma.vercel.app/equipments/user/${params.email}`)
       },
       {
         path: "/productDetails/:id",
         element: <PrivateRoute><ItemDetails></ItemDetails></PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/equipments/id/${params.id}`)
+        loader: ({params}) => fetch(`https://sports-mart-server-gamma.vercel.app/equipments/id/${params.id}`)
       },
       {
         path: "/updateProduct/:id",
         element: <PrivateRoute><UpdateProduct></UpdateProduct></PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/equipments/id/${params.id}`)
+        loader: ({params}) => fetch(`https://sports-mart-server-gamma.vercel.app/equipments/id/${params.id}`)
       },
     ]
   },

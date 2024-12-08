@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 
+import { Fade } from "react-awesome-reveal";
 import { FaRegStar, FaStar } from "react-icons/fa";
 import { IoCartSharp } from "react-icons/io5";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
@@ -13,6 +14,13 @@ const ProductCard = ({data}) => {
 const {_id,item, category,price,photo,rating,delivery} = data
 
     return (
+      <Fade
+      direction="up"
+      duration={1000}
+      damping={0.2}
+      cascade
+      triggerOnce
+      >
         <div className="card shadow-md shadow-base-300 rounded-lg">
         <figure className="">
           <img
@@ -20,7 +28,7 @@ const {_id,item, category,price,photo,rating,delivery} = data
             src={photo}
             alt="Shoes" />
         </figure>
-        <div className="card-body p-5 font-medium">
+        <div className="card-body p-3 font-medium flex-grow">
           <h2 className="card-title text-primary">{item}</h2>
 <div className="grid flex-grow grid-cols-2 gap-2">
 <p>Category: {category}</p>
@@ -46,6 +54,7 @@ const {_id,item, category,price,photo,rating,delivery} = data
           </div>
         </div>
       </div>
+      </Fade>
     );
 };
 

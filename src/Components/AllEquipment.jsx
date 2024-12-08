@@ -2,6 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import TableRow from "./sections/TableRow";
 import { useState } from "react";
 import { Helmet } from "react-helmet";
+import { Fade } from "react-awesome-reveal";
 
 
 
@@ -29,6 +30,13 @@ else{
 
     return (
         <div className="max-w-7xl mx-auto py-7">
+      <Fade
+      direction="up"
+      duration={2000}
+      cascade
+      damping={0.2}
+      triggerOnce
+      >
  <Helmet>
         <title>Sports Mart | All Equipments</title>
         <link rel="canonical" href="https://www.tacobell.com/" />
@@ -76,6 +84,7 @@ key={prod._id}
   
   </table>
 </div>
+</Fade>
         </div>
     );
 };
