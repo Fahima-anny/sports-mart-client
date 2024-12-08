@@ -7,7 +7,6 @@ import { toast } from "react-toastify";
 import { Helmet } from "react-helmet";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 import { IoEyeOffOutline } from "react-icons/io5";
-import { Fade } from "react-awesome-reveal";
 
 const Register = () => {
 
@@ -74,11 +73,7 @@ setShowPassword(!showPassword)
 }
 
     return (
-      <Fade
-      direction="right"
-      duration={1600}
-      cascade
-      >
+      
         <div className="hero min-h-[80vh]">
            <Helmet
            >
@@ -138,7 +133,6 @@ setShowPassword(!showPassword)
           </div>
         </div>
       </div>
-      </Fade>
     );
 };
 

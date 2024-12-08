@@ -109,6 +109,9 @@ navigate("/")
   <option value="Cricket">Cricket</option>
   <option value="Badminton">Badminton</option>
   <option value="Tennis">Tennis</option>
+  <option value="Cycling">Cycling</option>
+  <option value="Basketball">Basketball</option>
+  <option value="Gym & Fitness">Gym & Fitness</option>
   <option value="Others">Others</option>
 </select>
         </div>
