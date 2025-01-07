@@ -22,7 +22,7 @@ const Banner = () => {
     };
 
     return (
-        <div className="relative">
+        <div className="relative  h-[70vh] ">
             <Swiper
                 spaceBetween={30}
                 centeredSlides={true}
@@ -36,12 +36,12 @@ const Banner = () => {
                 navigation={true}
                 modules={[Autoplay, Pagination, Navigation]}
                 onAutoplayTimeLeft={onAutoplayTimeLeft}
-                className="mySwiper w-full h-[90vh]"
+                className="mySwiper w-full h-[70vh]"
             >
                 {/* Swiper Slides with images */}
                 <SwiperSlide>
                 <div
-  className="hero h-full   "
+  className="hero  h-[70vh]  "
   style={{
     backgroundImage: "url(https://i.ibb.co.com/t4nNYJS/badminton-concept-with-racket-shuttlecock.jpg)",
   }}>
@@ -59,7 +59,7 @@ const Banner = () => {
                 </SwiperSlide>
                 <SwiperSlide>
                     <div
-  className="hero  h-full  "
+  className="hero  h-[70vh]  "
   style={{
     backgroundImage: "url(https://i.ibb.co.com/nz19Htx/sports-tools.jpg)",
   }}>
@@ -77,7 +77,7 @@ const Banner = () => {
                 </SwiperSlide>
                 <SwiperSlide>
                 <div
-  className="hero  h-full  "
+  className="hero  h-[70vh] "
   style={{
     backgroundImage: "url(https://i.ibb.co.com/B6qSzXf/cricket-match-with-player.jpg)",
   }}>
@@ -95,7 +95,7 @@ const Banner = () => {
                 </SwiperSlide>
                 <SwiperSlide>
                 <div
-  className="hero  h-full  "
+  className="hero  h-[70vh] "
   style={{
     backgroundImage: "url(https://i.ibb.co.com/CVbgJDP/american-football-american-football-player-professional-sport-stadium.jpg)",
   }}>
@@ -113,7 +113,7 @@ const Banner = () => {
                 </SwiperSlide>
          
                 <div
-                    className="autoplay-progress absolute bottom-5 right-5 flex items-center justify-center z-50"
+                    className="autoplay-progress  absolute top-0 right-5 flex items-center justify-center z-50"
                     slot="container-end"
                 >
                     <svg

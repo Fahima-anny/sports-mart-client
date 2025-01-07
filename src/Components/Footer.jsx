@@ -1,12 +1,15 @@
 import { Link } from "react-router-dom";
-
+import logo from "../../sports.png"
 
 const Footer = () => {
     return (
         <div className=" bg-base-200 text-base-content p-3 md:p-0">
             <footer className="footer py-10 max-w-7xl mx-auto justify-between">
                 <aside >
-                    <a className="font-bold text-4xl pb-2 ">Sports Mart</a>
+                   <div className="flex items-center gap-3">
+                    <img src={logo} alt="" />
+                   <a className="font-bold text-4xl pb-2 ">Sports Mart</a>
+                   </div>
                     <p>
                         Address : M-36, Block-b, Gulshan,
                     </p>
@@ -22,9 +25,10 @@ const Footer = () => {
                     <p>
                         Phone : +8801676608603
                     </p>
+             
                 </aside>
                 <nav >
-                    <h6 className="font-semibold text-xl">Social</h6>
+                    <h6 className="font-semibold text-2xl">Follow us</h6>
                     <div className="grid grid-flow-col gap-4">
                         <Link to='https://x.com/'>
                             <svg
@@ -60,7 +64,7 @@ const Footer = () => {
                             </svg>
                         </Link>
                     </div>
-                    <p>Copyright © {new Date().getFullYear()} - All right reserved </p>
+                    <p className="pt-2">Copyright © {new Date().getFullYear()} - All right reserved </p>
                 </nav>
             </footer>
             {/* <footer className="footer footer-center  py-4">

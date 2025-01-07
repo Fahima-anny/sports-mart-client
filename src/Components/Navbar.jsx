@@ -12,8 +12,15 @@ const {user, signout,profile} = useContext(AuthContext) ;
 const links = <>
      <li><NavLink to='/'>Home</NavLink></li>
      <li><NavLink to='/allEquipment'>All Sports Equipment</NavLink></li>
-     <li><NavLink to='/addEquipment'>Add Equipment</NavLink></li>
-     <li><NavLink to={`/myEquipment/${user?.email}`}>My Equipment List</NavLink></li>
+{
+  user ? <>
+  <li><NavLink to='/addEquipment'>Add Equipment</NavLink></li>
+  <li><NavLink to={`/myEquipment/${user?.email}`}>My Equipment List</NavLink></li>
+  </>
+  : ""
+}
+     <li><NavLink to='/about'>About</NavLink></li>
+     <li><NavLink to='/contact'>Contact</NavLink></li>
 </>
 
 const handleLogout = () => {

@@ -1,16 +1,18 @@
 
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Fade } from "react-awesome-reveal";
 import { Helmet } from "react-helmet";
 import { FaRegStar, FaStar } from "react-icons/fa";
 import Rating from "react-rating";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { AuthContext } from "../AuthProviders/AuthProvider";
 // import { toast } from "react-toastify";
 
 
 const UpdateProduct = () => {
 
+  const {user} = useContext(AuthContext) ;
 const data = useLoaderData() ;
 const navigate = useNavigate() ;
 const {_id,name,email,item, category,price,customization,description,stock,photo,rating,delivery} = data
@@ -48,7 +50,7 @@ fetch(`https://sports-mart-server-gamma.vercel.app/equipments/id/${_id}`,{
     if(data.matchedCount > 0){
         toast.success("Item updated Successfully")
         form.reset() ;
-navigate("/")
+navigate(`/myEquipment/${user.email}`)
     }
 })
 

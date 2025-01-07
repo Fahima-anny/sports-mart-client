@@ -1,8 +1,8 @@
 import { useLoaderData } from "react-router-dom";
-import TableRow from "./sections/TableRow";
 import { useState } from "react";
 import { Helmet } from "react-helmet";
 import { Fade } from "react-awesome-reveal";
+import ProductCard from "./sections/ProductCard";
 
 
 
@@ -30,6 +30,12 @@ else{
 
     return (
         <div className="max-w-7xl mx-auto py-7">
+
+<Helmet>
+        <title>Sports Mart | All Equipments</title>
+        <link rel="canonical" href="https://www.tacobell.com/" />
+      </Helmet>
+
       <Fade
       direction="up"
       duration={2000}
@@ -37,10 +43,6 @@ else{
       damping={0.2}
       triggerOnce
       >
- <Helmet>
-        <title>Sports Mart | All Equipments</title>
-        <link rel="canonical" href="https://www.tacobell.com/" />
-      </Helmet>
 <div className="flex flex-col md:flex-row justify-between gap-3 py-5">
   <h3 className="font-semibold text-xl">Sort Items By Price :</h3>
   {/* <button onClick={handleSort} className="btn btn-outline flex gap-2 items-center"> <IoMdArrowDropdown className="text-2xl" />
@@ -54,7 +56,7 @@ else{
 </select>
 </div>
 
-          <div className="overflow-x-auto ">
+          {/* <div className="overflow-x-auto ">
   <table className="table table-xs text-center">
     <thead className="text-primary pb-3 h-[70px]">
       <tr>
@@ -83,7 +85,19 @@ key={prod._id}
    </tbody>
   
   </table>
+</div> */}
+
+<div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+{
+        allData?.map(data =>
+            <ProductCard
+             data={data}
+              // setAllData={setAllData}
+              //  allData={allData} 
+               key={data._id}></ProductCard>)
+    }
 </div>
+
 </Fade>
         </div>
     );

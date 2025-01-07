@@ -19,6 +19,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import PrivateRoute from './AuthProviders/PrivateRoute';
 import ItemDetails from './Components/ItemDetails';
 import UpdateProduct from './Components/UpdateProduct';
+import About from './Components/sections/About';
+import Contact from './Components/sections/Contact';
 // import Banner from './Components/sections/Banner';
 
 
@@ -42,6 +44,14 @@ const router = createBrowserRouter([
         element: <Register></Register>
       },
       {
+        path: "/about",
+        element: <About></About>
+      },
+      {
+        path: "/contact",
+        element: <Contact></Contact>
+      },
+      {
         path: "/allEquipment",
         element: <AllEquipment></AllEquipment>,
         loader: () => fetch("https://sports-mart-server-gamma.vercel.app/equipments")
@@ -57,7 +67,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/productDetails/:id",
-        element: <PrivateRoute><ItemDetails></ItemDetails></PrivateRoute>,
+        element: <ItemDetails></ItemDetails>,
         loader: ({params}) => fetch(`https://sports-mart-server-gamma.vercel.app/equipments/id/${params.id}`)
       },
       {

@@ -28,15 +28,15 @@ const {_id,item, category,price,photo,rating,delivery} = data
             src={photo}
             alt="Shoes" />
         </figure>
-        <div className="card-body p-3 font-medium flex-grow">
+        <div className="card-body p-3 flex-grow">
           <h2 className="card-title text-primary">{item}</h2>
-<div className="grid flex-grow grid-cols-2 gap-2">
+<div className="grid flex-grow grid-cols-1 gap-2 text-gray-500">
 <p>Category: {category}</p>
 <p className="">Delivery Time: {delivery}</p>
 </div>
-<div className="grid grid-cols-2 gap-2">
-          <p>Price: ${price}</p>
-          <p className="flex items-center justify-center gap-1">Rating:  
+<div className="grid grid-cols-2 gap-2 text-gray-500">
+          <p>Price: <span className="text-black font-medium">${price}</span></p>
+          <p className="flex items-center gap-1"> 
                <Rating
    className="text-yellow-500 text-xl"
    initialRating={rating}
@@ -49,8 +49,8 @@ const {_id,item, category,price,photo,rating,delivery} = data
      <Link
       to={`/productDetails/${_id}`}
        className="flex gap-1 items-center btn bg-[#ffa400] hover:bg-[#cc8500] text-black flex-nowrap h-auto">
-        View Details <MdKeyboardDoubleArrowRight className="text-2xl" /></Link>
-        <button className="btn bg-[#ffa400] hover:bg-[#ce8600] text-black flex items-center flex-nowrap h-auto gap-2">Add to Cart <IoCartSharp className="text-xl" /></button>
+         Details <MdKeyboardDoubleArrowRight className="text-2xl" /></Link>
+        <button className="btn bg-[#ffa400] hover:bg-[#ce8600] text-black flex items-center flex-nowrap h-auto gap-2">Add  <IoCartSharp className="text-xl" /></button>
           </div>
         </div>
       </div>

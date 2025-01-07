@@ -1,8 +1,8 @@
 import { useLoaderData } from "react-router-dom";
-import MyEquitmentsCard from "./sections/MyEquitmentsCard";
 import { useState } from "react";
 import { Helmet } from "react-helmet";
 import { Fade } from "react-awesome-reveal";
+import TableRow from "./sections/TableRow";
 
 
 const MyEquipment = () => {
@@ -17,9 +17,9 @@ const [allData,setAllData] = useState(loadedData)
         <title>Sports Mart | My Equipments</title>
         <link rel="canonical" href="https://www.tacobell.com/" />
       </Helmet>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10"></div>
 
-<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+<div className="">
 <Fade
       direction="up"
       duration={2000}
@@ -27,14 +27,50 @@ const [allData,setAllData] = useState(loadedData)
       damping={0.2}
       triggerOnce
       >
-    {
+
+
+ <div className="overflow-x-auto ">
+  <table className="table table-xs text-center">
+    <thead className="text-primary pb-3 h-[70px]">
+      <tr>
+        <th></th>
+        <th>Item Name</th>
+        <th>Category</th>
+        <th>Stock Status</th>
+        <th>Ratings</th>
+        <th>Delivery Time</th>
+        <th>Price</th>
+        <th >Details</th>
+      </tr>
+    </thead>
+    <tbody>
+
+{
+allData.map((prod,idx) => <TableRow 
+key={prod._id}
+ idx={idx} 
+ prod={prod}
+ setAllData={setAllData}
+ allData={allData}
+ ></TableRow>) 
+}
+
+
+
+   </tbody>
+  
+  </table>
+</div>
+
+
+    {/* {
         allData?.map(data =>
             <MyEquitmentsCard
              data={data}
               setAllData={setAllData}
                allData={allData} 
                key={data._id}></MyEquitmentsCard>)
-    }
+    } */}
     </Fade>
 </div>
 

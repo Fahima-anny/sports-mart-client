@@ -10,7 +10,7 @@ import { Fade } from "react-awesome-reveal";
 
 const Login = () => {
 
-  const {login, googleSignIn} = useContext(AuthContext) ;
+  const {login, googleSignIn, setProfile} = useContext(AuthContext) ;
 const navigate = useNavigate() ;
 // const location = useLocation() ;
 // console.log(location.state);
@@ -40,8 +40,9 @@ const handleSubmit = e => {
 const handleGoogleLogin = () => {
   googleSignIn()
   .then(res => {
-    // console.log(res.user)
+    console.log(res.user)
     toast.success(`Welcome ${res.user.displayName}`)
+          setProfile(res.user.photoURL)
     // console.log(user.email)
     // const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     // if(emailRegex.test(location.state)){
