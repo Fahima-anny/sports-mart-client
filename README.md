@@ -19,5 +19,26 @@
  - Node JS
  - Express JS
 
+## 5. 📦 Dependencies
+The main dependencies used in this project are:
+- **Vite**
+- **React**
+- **React Router DOM**
+- **Tailwind CSS**
+- **DaisyUI**
+- **Node.js**
+- **Express.js**
+- **MongoDB**
+- **Firebase**
+
+## 6. 💻 How to Run Locally
+Follow these steps to set up and run the project on your local machine:
+
+ - Clone the repository
+ - Run: npm install
+ - Create a .env file and add the environment variables
+ - Run: npm run dev
+ - Visit: http://localhost:5173
+
 #
 # Thank You
