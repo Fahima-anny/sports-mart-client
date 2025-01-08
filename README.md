@@ -9,6 +9,15 @@
  - You can have a look of details of any product before you buy it. you can also check the customers review.
  - As an admin you can see what products you have added to this website and modify them.
 
+## 4. Technologies Used :
+ - Vite
+ - React
+ - MongoDB
+ - Firebase
+ - Tailwind
+ - DaisyUI
+ - Node JS
+ - Express JS
 
 #
 # Thank You
