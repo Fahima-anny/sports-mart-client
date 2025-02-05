@@ -6,7 +6,7 @@
 
 ## 📸 Screenshot
 <div align="center">
-   <img src="https://i.ibb.co.com/pvdMPNq5/screencapture-smartpick-01-web-app-2025-02-05-19-23-49.png" alt="Smart Pick Screenshot" width="800px"/>
+   <img src="https://i.ibb.co.com/Dy9mTDS/Screenshot-2025-02-05-194227.png" alt="Smart Pick Screenshot" width="800px"/>
 </div>
 
 ## 5 Key Features of The Project :
